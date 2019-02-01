@@ -5,18 +5,18 @@
         <item value="Что такое бот"/>
     </sample>
 
-    <input pattern="* (привет*|здравствуй*) *">
+    <input pattern="* (привет*|здравствуй*|здарова*) *">
         <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
+            <item value="Здаров! $UserName! Как сам?"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+            <output value="Привет! Я друг Алисы, Меня зовус Васёк, тебя как зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output value="Приятно познакомиться, $UserName! Чего хотел?"/>
                 <context/>
             </input>
         </context>
@@ -25,7 +25,7 @@
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
+        <output value="Бай, $UserName!"/>
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
@@ -42,7 +42,7 @@
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
 
             <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
+                <item value='Я глянул в вики, но нифига не нашел '/>
                 <item value="В википедии ничего не нашлось..."/>
             </output>
 
