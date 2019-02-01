@@ -10,13 +10,9 @@
             <item value="Здаров! $UserName! Как сам?"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
         </output>
-        
-    <input pattern="* (дискорт*) *">
-        <output value="Открыть Discord"/>
-
-
+    
         <context if="empty($UserName)" id="name">
-            <output value="Здаров! Я друг Алисы, меня Васьком звать, а тв кто?"/>
+            <output value="Здаров! Я друг Алисы, меня Васьком звать, а ты кто?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
@@ -25,6 +21,12 @@
             </input>
         </context>
     </input>
+    
+    <input pattern="* (дискорт*|дискорд*|) *">
+        <output if="full($UserName)">
+            <item value="Запустить Discord"/>
+            <item value="ЗЗапусти Discord"/>
+        </output>
 
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
