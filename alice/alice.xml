@@ -19,19 +19,17 @@
                 <output value="Окей, $UserName! Чего хотел?"/>
                 <context/>
             </input>
-            <input pattern="* открыть дискорт *">
-                <output value="Запустить Discord"/>
-                <context/>
-            </input>
         </context>
     </input>
     
-
-
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
         <output value="Бай, $UserName!"/>
+    </input>
+    
+    <input pattern="* Что делать будешь *">
+        <output value="Стрелять по лягушкам в Германии из космоса со спутника"/>
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
