@@ -23,9 +23,8 @@
     </input>
     
     <input pattern="* (дискорт*|дискорд*|) *">
-        <output if="full($UserName)">
-            <item value="Запустить Discord"/>
-            <item value="ЗЗапусти Discord"/>
+        <output value="Запустить Discord"/>
+         <context/>
         </output>
 
     <input pattern="* пока *">
