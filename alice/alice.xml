@@ -19,7 +19,7 @@
                 <output value="Окей, $UserName! Чего хотел?"/>
                 <context/>
             </input>
-            <input pattern="$Discord">
+            <input pattern="discord">
                 <output value="Запустить Discord"/>
                 <context/>
             </input>
