@@ -21,7 +21,6 @@
             </input>
             <input pattern="$Discord">
                 <output value="Запустить Discord"/>
-                </output>
                 <context/>
             </input>
         </context>
